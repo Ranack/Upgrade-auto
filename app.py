@@ -122,7 +122,7 @@ with col1:
     image_path = os.path.join(image_folder, selected_image)
     image = Image.open(image_path)
     image = apply_accessibility_options(image, contrast_level, zoom_level, monochrome, invert_colors)
-    st.image(image, caption=selected_image, use_column_width=True)
+    st.image(image, caption=selected_image, use_container_width=True)
 
 # Construire le nom du masque correspondant
 mask_image_name = selected_image.replace('_leftImg8bit.png', '_gtFine_color.png')
@@ -134,7 +134,7 @@ with col2:
         st.write("### Masque")
         mask_image = Image.open(mask_image_path)
         mask_image = apply_accessibility_options(mask_image, contrast_level, zoom_level, monochrome, invert_colors)
-        st.image(mask_image, caption=mask_image_name, use_column_width=True)
+        st.image(mask_image, caption=mask_image_name, use_container_width=True)
     else:
         st.write("Masque non trouvé pour cette image.")
 
@@ -152,7 +152,7 @@ baseline_image_path = os.path.join(baseline_folder, baseline_image_name)
 st.write("### Prédiction baseline")
 baseline_image = Image.open(baseline_image_path)
 baseline_image = apply_accessibility_options(baseline_image, contrast_level, zoom_level, monochrome, invert_colors)
-st.image(baseline_image, caption=baseline_image_name, use_column_width=True)
+st.image(baseline_image, caption=baseline_image_name, use_container_width=True)
 
 # Créer deux nouvelles colonnes pour afficher les images Modèle C1 et Modèle C2
 col3, col4 = st.columns(2)
@@ -167,7 +167,7 @@ with col3:
         st.write("### Modèle C1")
         c1_image = Image.open(c1_image_path)
         c1_image = apply_accessibility_options(c1_image, contrast_level, zoom_level, monochrome, invert_colors)
-        st.image(c1_image, caption=c1_image_name, use_column_width=True)
+        st.image(c1_image, caption=c1_image_name, use_container_width=True)
     else:
         st.write("Modèle C1 non trouvé pour cette image.")
 
@@ -181,7 +181,7 @@ with col4:
         st.write("### Modèle C2")
         c2_image = Image.open(c2_image_path)
         c2_image = apply_accessibility_options(c2_image, contrast_level, zoom_level, monochrome, invert_colors)
-        st.image(c2_image, caption=c2_image_name, use_column_width=True)
+        st.image(c2_image, caption=c2_image_name, use_container_width=True)
     else:
         st.write("Modèle C2 non trouvé pour cette image.")
 
@@ -198,7 +198,7 @@ with col5:
         st.write("### Modèle MC1")
         mc1_image = Image.open(mc1_image_path)
         mc1_image = apply_accessibility_options(mc1_image, contrast_level, zoom_level, monochrome, invert_colors)
-        st.image(mc1_image, caption=mc1_image_name, use_column_width=True)
+        st.image(mc1_image, caption=mc1_image_name, use_container_width=True)
     else:
         st.write("Modèle MC1 non trouvé pour cette image.")
 
@@ -212,6 +212,6 @@ with col6:
         st.write("### Modèle MC2")
         mc2_image = Image.open(mc2_image_path)
         mc2_image = apply_accessibility_options(mc2_image, contrast_level, zoom_level, monochrome, invert_colors)
-        st.image(mc2_image, caption=mc2_image_name, use_column_width=True)
+        st.image(mc2_image, caption=mc2_image_name, use_container_width=True)
     else:
         st.write("Modèle MC2 non trouvé pour cette image.")
